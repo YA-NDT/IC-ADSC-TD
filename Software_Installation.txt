@@ -239,3 +239,100 @@
 
     - запустить проект "Запустить"(https://yadi.sk/i/HKL1mM7HaQSC2w). Результат можно посмотреть в
 	открывшемся окне - https://yadi.sk/i/ng7kEQudq3GBow .
+
+1.4 Установка среды разработки в ОС Mac OS
+1.4.1 gcc + блокнот
+	- установить Xcode(через AppStore)
+
+	- установить Xcode Command Line Tools командой - xcode-select --install . Далее
+	следовать инструкциям инсталятора.
+
+	- проверить наличие компилятора в окне терминала командой - gcc -v , должно
+	получиться что-то вроде этого - https://yadi.sk/i/FIQSRFxVv49WZQ
+
+	- создать в любой домашней директории(например Documents) файл "hello.c" командой, в
+	терминале - touch hello.c (потому как маковский "TextEdit" не умеет делать текстовые
+	файлы с произвольным расширением, а для того чтобы иметь такую возможность нужно
+	устанавливать отдельную утилиту iMakerTxtFile)
+
+	- но и это ещё не всё. Для того чтобы ввести код "Hello World" пришлось устанавливать
+	систему "MacPorts", чтобы установить "Midnight Commander", т.к. встроенный текстовый
+	редактор "TextEdit" не только не умеет сохранять файлы с произвольным расширением,
+	но ещё и сохраняет текст с модифицированными кавычками, которые не распознаются
+	компилятором и в результате выводятся ошибки - https://yadi.sk/i/97N6ICvuS3hWhA . Вот
+	что стояло вместо кавычек, при просмотре через "Midnight Commander" -
+	https://yadi.sk/i/QBqV5XHmD2b6kg
+
+	- сайт macports.org, в разделе Downloads скачать нужный установочный пакет под
+	текущую версию ОС - https://yadi.sk/i/QBqV5XHmD2b6kg
+
+	- обновить коллекцию портов командой - sudo port -v selfupdate
+
+	- установить "Midnight Commander" командой - sudo port install mc
+
+	- открыть созданный "hello.c" текстовым редактором, например текстовым редактором
+	"Midnight Commander". Ввести в нём
+	#include <stdio.h>
+
+    int main()
+    {
+      printf("Hello world\n");
+      return 0;
+    }
+
+    сохранить.
+
+    - в окне терминала перейти в директорию в которой сохранён файл "hello.c", например
+    cd Documents
+
+    - скомпилировать код командой gcc hello.c -o hello
+
+	- запустить программу командой - ./hello
+
+	- результат - https://yadi.sk/i/FApJqiwjwN7fag
+
+1.4.2 CodeBlocks + gcc
+	- установить Xcode(через AppStore)
+
+	- установить Xcode Command Line Tools командой - xcode-select --install . Далее
+	следовать инструкциям инсталятора. Не знаю насколько это нужно в этом варианте, но
+	пусть будет.
+
+	- проверить наличие компилятора в окне терминала командой - gcc -v , должно
+	получиться что-то вроде этого - https://yadi.sk/i/FIQSRFxVv49WZQ
+
+	- скачать CodeBlocks тут - http://www.codeblocks.org/downloads/26 -
+	https://yadi.sk/i/Mvm7QRMPrOpjUA
+
+	- запустить CodeBlocks-13.12-mac.zip. При старте появится окно содержащее список
+	доступных и найденных в системе компиляторов - https://yadi.sk/i/CQ88OZO4nJd62w .
+	По-умолчанию должен быть выбран "GNU GCC Compiler", об этом будет сообщение под
+	окном списка компиляторов - "Current defaule compiler: GNU GCC Compiler". Провести
+	установку с настройками по-умолчанию.
+
+	- в открывшемся окне выбрать "Create a new project" -
+	https://yadi.sk/i/9p3NU0OFXIsdSA.
+	Далее в списке выбрать "Console application" и нажать справа вверху "Go" -
+	https://yadi.sk/i/kLJ_-IcR6FijqA .
+
+   - "Next" -> выбираем C(https://yadi.sk/i/fF0VV1NtRpvVMg) -> "Next" -> выбираем имя
+	проекта и папку сохранения(https://yadi.sk/i/o0TwQGsImldJuQ) -> "Next" -> оставляем
+	всё по-умолчанию(https://yadi.sk/i/Qf_Z83jcILrTaQ) -> "Finish".
+
+   - в открывшемся дереве проекта слева открываем "Sources", далее два раза жмём на
+	"main.c". Откроется готовый код проекта с "Hello world".
+
+   - нажимаем "Build"(https://yadi.sk/i/k923ka99XvJJhA). Внизу должно быть сообщение о
+	компиляции проекта. Что-то похожее на это https://yadi.sk/i/IVrC6nFyXFbZUg .
+
+   - нажимаем "Run"(https://yadi.sk/i/J03FIRV99mbQjA). Откроется окно с результатом работы
+	программы - https://yadi.sk/i/ndlFZJ21tzsOJQ
+
+1.4.3 Eclipse+gcc
+	Eclipse вылетает. По-всей видимости проблема связана с версией системы 10.9.5.
+	На сайте Eclipse в багтреккере данная проблема описана -
+	https://bugs.eclipse.org/bugs/show_bug.cgi?id=537027 .
+	Возможно в новой версии MacOS установка пройдёт без проблем.
+
+1.4.4 QTCreator
+	https://yadi.sk/i/PZ9Qq7FiWQ2Blw
