@@ -1,0 +1,17 @@
+@startuml
+
+start
+:А = Массив чисел от 2 до N<
+:N = 255, P = 2;
+while (P < N) is (да)
+  if (A[P] != 0) then (да)
+  	:K = P * 2;
+	while (K < N) is (да)
+      :A[K] = 0, K += P;
+	endwhile
+  endif
+    :P += 1]
+endwhile (нет)
+:Массив нулей и простых чисел>
+stop
+@enduml
