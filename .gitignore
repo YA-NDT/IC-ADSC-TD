@@ -2,8 +2,5 @@
 *.pdf
 Ratings
 .DS_Store
-<<<<<<< HEAD
-Block-scheme
-=======
 /Presents/
->>>>>>> upstream/master
+Block-scheme
